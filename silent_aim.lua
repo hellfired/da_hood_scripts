@@ -25,6 +25,15 @@ end
 
 getgenv().SILENTAIM_LOADED = true
 
+-- Main Settings
+if not Main then
+    getgenv().Main = {
+        ["velocity"] = 0.165,
+        ["prediction"] = true,
+        ["lockonto"] = "Head",
+    }
+end
+
 wait(1.5)
 
 settings.active = false
@@ -59,8 +68,12 @@ end
 
 function ass(pedophile,victim,genitals,female,minor)
 	if pedophile == "gay" and victim and female and minor then
-		return victim.Character[genitals].Position + victim.Character.UpperTorso.Velocity * 0.165
-	end
+		if Main.prediction then
+		    return victim.Character[genitals].Position + victima.Character.UpperTorso.Velocity * Main.velocity
+		else
+		    return victim.Character[genitals].Position
+		end
+    	end
 end
 
 function ispedophile(player,fdmg)
@@ -122,7 +135,7 @@ mt.__namecall = newcclosure(function(self,...)
 	local methods = {...}
 	local ncm = getnamecallmethod()
 	if ncm == "FireServer" and ispedophile("gay",self) and methods[1] == "UpdateMousePos" and settings["active"] and settings["victim"] then
-		methods[2] = ass("gay",settings["victim"].PartName or "Head",true,true)
+		methods[2] = ass("gay",settings["victim"],Main.lockonto or "Head",true,true)
 	end
 	return dahood(self,unpack(methods))
 end)
