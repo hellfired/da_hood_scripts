@@ -15,7 +15,7 @@ local settings = {
 }
 
 -- // Checks if the script is executed on Da Hood
-if game.PlaceId ~= 2788229376 or SILENTAIM_LOADED then
+if game.PlaceId == 2788229376 then
 	sGui:SetCore("SendNotification", {
 		Title = "Hell's Silent Aim",
 		Text = "Thanks for using my silent aim! Have fun"
