@@ -1,5 +1,3 @@
-local library = loadstring(game:HttpGet("https://github.com/hellfired/libraries/blob/main/1st%20one%20ever"))
-
 -- // Services
 local Players = game:GetService("Players")
 local sGui = game:GetService("StarterGui")
