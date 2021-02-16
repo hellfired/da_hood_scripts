@@ -32,19 +32,19 @@ wait(1.5)
 settings.active = false
 sGui:SetCore("SendNotification", {
 	Title = "Hell's Silent Aim",
-	Text = "Press "..keys.key1.." to lock onto someone"
+	Text = "Press "..keybinds.lock.." to lock onto someone"
 })
 
 settings.active = false
 sGui:SetCore("SendNotification", {
 	Title = "Hell's Silent Aim",
-	Text = "Press "..keys.key2.." to unlock"
+	Text = "Press "..keybinds.unlock.." to unlock"
 })
 
 settings.active = false
 sGui:SetCore("SendNotification", {
 	Title = "Hell's Silent Aim",
-	Text = "Press "..keys.key3.." to deactivate/active the silent aim"
+	Text = "Press "..keybinds.deactivate.." to deactivate/active the silent aim"
 })
 
 function autistic(shit)
@@ -74,7 +74,7 @@ function ispedophile(player,fdmg)
 end
 noob = nil
 mouse:KeyDown:Connect(function(AMONGUS)
-	if AMONGUS:lower() == keys.key1:lower() then
+	if AMONGUS:lower() == keybinds.lock:lower() then
 		local genital = mouse.Target
 		if genital then
 			local victim = genital.Parent
@@ -91,7 +91,7 @@ mouse:KeyDown:Connect(function(AMONGUS)
 				})
 			end
 		end
-	elseif AMONGUS:lower() == keys.key2:lower() then
+	elseif AMONGUS:lower() == keybinds.unlock:lower() then
 		if settings.victim then
 			local noob = settings.victim
 			noob = nil
@@ -100,7 +100,7 @@ mouse:KeyDown:Connect(function(AMONGUS)
 				Text = "Unlocked from: "..noob.Name
 			})
 		end
-	elseif AMONGUS:lower() == keys.key3:lower() then
+	elseif AMONGUS:lower() == keybinds.deactivate:lower() then
 		if settings.active == true then
 			settings.active = false
 			sGui:SetCore("SendNotification", {
